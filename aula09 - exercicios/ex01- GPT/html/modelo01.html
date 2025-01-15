@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de Estado de Saúde</h1>
+    </header>
+
+    <section>
+        <div id="containerSono">
+            Horas de Sono na Ultima Noite: <input type="number" name="horaSono" id="horaSono" placeholder="00:00">
+        </div>
+
+        <div id="containerRefeicao">
+            Quantidade de Refeições Saudaveis Feitas no Dia:
+            <input type="radio" name="refeicao" id="refeicao1" checked> 1 Refeição
+            <input type="radio" name="refeicao" id="refeicao2"> 2 Refeições
+            <input type="radio" name="refeicao" id="refeicao3"> 3 Refeições
+            <input type="radio" name="refeicao" id="refeicao4"> 4 Refeições
+        </div>
+        
+        <div id="containerExercicio">
+            Minutos de Exercicios Praticados: <input type="number" name="exercicio" id="exercicio" placeholder="00 minutos">
+        </div>
+        
+        <input type="button" value="Calcular" onclick="verificar()">
+
+        <p id="resultado">Praticar exercicios e ter uma boa alimentação durante o dia é muito importante para ter uma vida saudavel.</p>
+    </section>
+
+    <footer>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
