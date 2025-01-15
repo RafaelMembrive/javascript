@@ -1,10 +1,10 @@
 function verificar() {
-    var horaSono = window.document.getElementById("horaSono").value
+    var horaSono = Number(window.document.getElementById("horaSono").value)
     var refeicao1 = window.document.getElementById("refeicao1")
     var refeicao2 = window.document.getElementById("refeicao2")
     var refeicao3 = window.document.getElementById("refeicao3")
     var refeicao4 = window.document.getElementById("refeicao4")
-    var exercicio = window.document.getElementById("exercicio")
+    var exercicio = Number(window.document.getElementById("exercicio").value)
     var resultado = window.document.getElementById("resultado")
 
     //verificação do sono
@@ -19,25 +19,27 @@ function verificar() {
     //verificação das refeições
 
     if (refeicao1.checked) {
-        resultado.innerHTML += "Voce fez apenas uma refeição saudavel durante o dia. Isso nao é saudavel, o correto é no minimo 2 refeições saudaveis durante o dia."
+        resultado.innerHTML += "<br>Voce fez apenas uma refeição saudavel durante o dia. Isso nao é saudavel, o correto é no minimo 2 refeições saudaveis durante o dia."
     } else if (refeicao2.checked) {
-        resultado.innerHTML += "Voce fez apenas duas refeições durante o dia. Nao está bom mas é o minimo necessario."
+        resultado.innerHTML += "<br>Voce fez apenas duas refeições durante o dia. Nao está bom mas é o minimo necessario."
     } else if (refeicao3.checked) {
-        resultado.innerHTML += "Voce fez tres refeições durante o dia. O ideal são quatro refeições, mas assim como voce está tambem está bom."
+        resultado.innerHTML += "<br>Voce fez tres refeições durante o dia. O ideal são quatro refeições, mas assim como voce está tambem está bom."
     } else{
-        resultado.innerHTML += " Parabens, voce fez as 4 refeições saudaveis durante o dia."
+        resultado.innerHTML += "<br>Parabens, voce fez as 4 refeições saudaveis durante o dia."
     }
     
 
     // verificação do exercicio
 
-    if (exercicio >= 60) {
-        resultado.innerHTML += ` Parabens, voce esta tendo um otimo rendimento no seu treinamento.`
+    if (isNaN(exercicio) || exercicio < 0) {
+        resultado.innerHTML += "<br>Por favor, insira um valor válido para os minutos de exercício.";
+    } else if (exercicio >= 60) {
+        resultado.innerHTML += `<br>Parabens, voce esta tendo um otimo rendimento no seu treinamento.`
     } else if (exercicio >= 30) {
-        resultado.innerHTML += " Otimo, seu rendimento no seu treino está bom, mas ainda pode melhorar"
+        resultado.innerHTML += "<br>Otimo, seu rendimento no seu treino está bom, mas ainda pode melhorar"
     } else if (exercicio >= 15) {
-        resultado.innerHTML += "OK, voce ainda pode melhorar bastante no seu treinamento, nao desista."
+        resultado.innerHTML += "<br>OK, voce ainda pode melhorar bastante no seu treinamento, nao desista."
     } else {
-        resultado.innerHTML += "Voce deveria começar a praticar exercicios fisicos."
+        resultado.innerHTML += "<br>Voce deveria começar a praticar exercicios fisicos."
     }
 }
