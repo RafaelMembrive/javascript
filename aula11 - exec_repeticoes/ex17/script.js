@@ -4,7 +4,7 @@ function calcular() {
 
     caixaTexto.innerHTML = ""
 
-    for( var n = 1; n <= 10; n++){
+    for(var n = 1; n <= 10; n++){
         caixaTexto.innerHTML += `${numero} x ${n} = ${numero * n}\n`
     }
 }
